@@ -2,7 +2,6 @@
 
 case $1 in
     'start' )
-	apt-get install -y awscli
 	SCHEDULE='*/10 * * * *' # every ten minutes
 	(crontab -l 2> /dev/null; echo "$SCHEDULE $(pwd)/$(basename $0)") | crontab - ;;
     'stop' )
